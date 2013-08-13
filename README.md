@@ -1,2 +1,2 @@
-abada-commons
+Abada Commons Project
 =============
