@@ -26,7 +26,6 @@
 Ext.define('Abada.menu.MainMenu', {
     requires: ['Abada.Ajax'],
     extend: 'Ext.dataview.NestedList',
-    xtype: 'abada.nestedlist',
     config: {
         url: undefined,
         method: 'POST',
