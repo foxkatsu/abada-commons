@@ -14,7 +14,7 @@
 <!--CSS Touch -->
 <link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/touch/resources/css/sencha-touch.css"/>" />
 <!--Tocuch base -->
-<script src="<@spring.url relativeUrl="/touch/sencha-touch-all.js"/>" type="text/javascript"></script>
+<script src="<@spring.url relativeUrl="/touch/sencha-touch.js"/>" type="text/javascript"></script>
 <script src="<@spring.url relativeUrl="/abada-touch/ext-abada-utils.js"/>" type="text/javascript"></script>
 </#if>
 
