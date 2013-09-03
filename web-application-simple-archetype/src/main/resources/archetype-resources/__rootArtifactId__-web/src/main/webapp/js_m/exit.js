@@ -1,6 +1,6 @@
 /*
  * #%L
- * Web Archetype
+ * Cleia
  * %%
  * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
  * %%
