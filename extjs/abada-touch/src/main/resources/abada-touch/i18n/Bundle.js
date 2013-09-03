@@ -36,7 +36,8 @@ Ext.define('Abada.i18n.Bundle', {
          */
         path: 'resources',
         url: undefined,
-        localePath: 'touch/locale'
+        localePath: 'touch/locale',
+        insertLocale:true
 
                 /**
                  * @cfg lang {String} Language in the form xx-YY where:
@@ -60,16 +61,15 @@ Ext.define('Abada.i18n.Bundle', {
         me.localePath = config.localePath || me.localePath;
         me.path = config.path || me.path;
         me.url = config.url || me.url;
+        me.insertLocale = config.insertLocale || me.insertLocale;
 
         delete config.lang;
         delete config.noCache;
 
         me.callParent([config]);
         
-        this.insertScript(me.language);
-    },
-    getScriptContent: function() {
-        return 'function ' + this.getCallBackFunctionName() + '(){Ext.getCmp(\'' + this.getName() + '\').onSubmit();}';
+        if (me.insertLocale)
+            this.insertScript(me.language);
     },
     /**
      * @private
