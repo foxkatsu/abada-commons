@@ -28,12 +28,13 @@ package com.abada.springframework.web.servlet.menu;
  */
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
  * @author katsu
  */
 public interface MenuService {
-    public List<MenuEntryBean> getMenus(String requestContextPath,String ... roles);
-    public List<MenuEntryBean> getMenus(String requestContextPath,Device device,String ... roles);
+    public List<MenuEntryBean> getMenus(String requestContextPath, Locale locale,String ... roles);
+    public List<MenuEntryBean> getMenus(String requestContextPath,Device device, Locale locale,String ... roles);
 }

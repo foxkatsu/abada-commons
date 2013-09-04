@@ -39,7 +39,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.support.AbstractMessageSource;
 import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -95,7 +94,7 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
         //Group
         MenuEntry me = m.getAnnotation(MenuEntry.class);
         String[] groups = SEPARATOR.split(me.menuGroup());
-        MenuEntryBean group = this.getCreateGroup(getMessageSource(), groups, 0, this.getMenus(), me);
+        MenuEntryBean group = this.getCreateGroup(groups, 0, this.getMenus(), me);
         //Entry
         RequestMapping rm = m.getAnnotation(RequestMapping.class);
         MenuEntryBean aux = new MenuEntryBean();
@@ -170,29 +169,22 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
 //        }
     }
 
-    private String getText(AbstractMessageSource messageSource, String text) {
-        if (messageSource != null) {
-            return messageSource.getMessage(text, null, text, Locale.getDefault());
-        }
-        return text;
-    }
-
-    private MenuEntryBean getCreateGroup(AbstractMessageSource messageSource, String[] text, int i, List<MenuEntryBean> menus, MenuEntry me) {
-        MenuEntryBean group = getCreateGroup(messageSource, text[i], menus);
+    private MenuEntryBean getCreateGroup( String[] text, int i, List<MenuEntryBean> menus, MenuEntry me) {
+        MenuEntryBean group = getCreateGroup(text[i], menus);
         if (group != null) {
             if (i + 1 >= text.length) {
                 return group;
             } else {
-                return getCreateGroup(messageSource, text, i + 1, group.getChilds(), me);
+                return getCreateGroup( text, i + 1, group.getChilds(), me);
             }
         } else {
             return createGroups(text, i, menus, me);
         }
     }
 
-    private MenuEntryBean getCreateGroup(AbstractMessageSource messageSource, String text, List<MenuEntryBean> menus) {
+    private MenuEntryBean getCreateGroup(String text, List<MenuEntryBean> menus) {
         for (MenuEntryBean meb : menus) {
-            if (meb.getText().equals(this.getText(messageSource, text))) {
+            if (meb.getText().equals(text)) {
                 return meb;
             }
         }
@@ -211,16 +203,16 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
     }
 
     @Override
-    public List<MenuEntryBean> getMenus(String contextPath, String... roles) {
-        return getMenus(contextPath, Device.DESKTOP, roles);
+    public List<MenuEntryBean> getMenus(String contextPath, Locale locale, String... roles) {
+        return getMenus(contextPath, Device.DESKTOP,locale, roles);
     }
 
     @Override
-    public List<MenuEntryBean> getMenus(String contextPath, Device device, String... roles) {
+    public List<MenuEntryBean> getMenus(String contextPath, Device device, Locale locale, String... roles) {
         List<MenuEntryBean> result = new ArrayList<MenuEntryBean>();
         MenuEntryBean aux;
         for (MenuEntryBean menu : this.getMenus()) {
-            aux = this.getMenus(contextPath, menu, device, roles);
+            aux = this.getMenus(contextPath, menu, device,locale, roles);
             if (aux != null) {
                 result.add(aux);
             }
@@ -228,8 +220,8 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
         return result;
     }
 
-    private MenuEntryBean getMenus(String contextPath, MenuEntryBean menu, Device device, String... roles) {
-        MenuEntryBean result = new MenuEntryBean(menu);
+    private MenuEntryBean getMenus(String contextPath, MenuEntryBean menu, Device device,Locale locale, String... roles) {
+        MenuEntryBean result = new MenuEntryBean(menu,getMessageSource(),locale);
         if (menu.getChilds() == null || menu.getChilds().isEmpty()) {
             if (result.constainsRoles(roles) && result.constainsDevice(device)) {
                 result.setIcon(this.getURL(contextPath, result.getIcon()));
@@ -239,7 +231,7 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
         } else {
             MenuEntryBean aux;
             for (MenuEntryBean c : menu.getChilds()) {
-                aux = getMenus(contextPath, c, device, roles);
+                aux = getMenus(contextPath, c, device,locale, roles);
                 if (aux != null) {
                     result.getChilds().add(aux);
                 }

@@ -30,6 +30,8 @@ package com.abada.springframework.web.servlet.menu;
 import com.abada.ofuscation.annotation.NoOfuscation;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import org.springframework.context.support.ResourceBundleMessageSource;
 
 /**
  *
@@ -48,8 +50,8 @@ public class MenuEntryBean {
     public MenuEntryBean(){        
     }
     
-    public MenuEntryBean(MenuEntryBean meb){
-        this(meb.getText(), meb.getIcon(),meb.getUrl(), meb.getRoles(), meb.getOrder(),meb.getDevices());
+    public MenuEntryBean(MenuEntryBean meb,ResourceBundleMessageSource resource,Locale locale){
+        this(resource.getMessage(meb.getText(), null,meb.getText(), locale), meb.getIcon(),meb.getUrl(), meb.getRoles(), meb.getOrder(),meb.getDevices());
     }
     
     public MenuEntryBean(String text, String icon, String url, List<String> roles, int order,List<Device> devices) {
