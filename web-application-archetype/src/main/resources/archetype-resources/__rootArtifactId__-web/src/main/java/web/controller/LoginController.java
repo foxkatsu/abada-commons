@@ -92,7 +92,6 @@ public class LoginController {
             return "dynamic/main";
         }else{
             model.addAttribute("isDesktop", device.isNormal());
-            model.addAttribute("js", Arrays.asList("js/main.js"));
             return "dynamic/main";
         }
     }

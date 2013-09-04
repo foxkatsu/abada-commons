@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="${c}"/>" />
         </#list>
     </#if>
-
+<#if (!isDesktop?? || isDesktop) >
+    <script src="<@spring.url relativeUrl="/js/main.js"/>" type="text/javascript"></script>    
+</#if>
     <#if extjs??>
         <#list extjs as j>
     <script src="${j}" type="text/javascript"></script>
