@@ -27,12 +27,11 @@
 Ext.define('Abada.grid.Panel', {
     extend: 'Ext.grid.Panel',
     config: {
-        i18n: undefined,
-        title: undefined
+        i18n: undefined
     },
     constructor: function(config) {
         this.initConfig(config);
-        this.setTitle(config.i18n.getMsg(config.title));
+        this.setTitle(config.i18n.getMsg(this.title));
         this.translation(config.i18n);
 
         this.callParent([config]);
