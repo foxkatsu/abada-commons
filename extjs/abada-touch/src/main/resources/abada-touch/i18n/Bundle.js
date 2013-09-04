@@ -22,7 +22,7 @@
 Ext.define('Abada.i18n.Bundle', {
     extend: 'Ext.util.Observable',
     requires: [
-        'Abada.Ajax'
+        'Abada.Ajax','Ext.String'
     ],
     //@private
     defaultLanguage: 'es_ES',
@@ -37,7 +37,7 @@ Ext.define('Abada.i18n.Bundle', {
         path: 'resources',
         url: undefined,
         localePath: 'touch/locale',
-        insertLocale:true
+        insertLocale: true
 
                 /**
                  * @cfg lang {String} Language in the form xx-YY where:
@@ -67,14 +67,14 @@ Ext.define('Abada.i18n.Bundle', {
         delete config.noCache;
 
         me.callParent([config]);
-        
+
         if (me.insertLocale)
             this.insertScript(me.language);
     },
     /**
      * @private
      */
-    findScript: function(head,language) {
+    findScript: function(head, language) {
         var i;
         for (i = 0; i < head.childNodes.length; i++) {
             if (head.childNodes[i].type && head.childNodes[i].type == 'text/javascript') {
@@ -90,7 +90,7 @@ Ext.define('Abada.i18n.Bundle', {
     insertScript: function(language) {
         var headID = document.getElementsByTagName('head')[0];
         if (headID) {
-            var newScript = this.findScript(headID,language);
+            var newScript = this.findScript(headID, language);
 
             if (!newScript) {
                 //script callback de datos
@@ -122,7 +122,13 @@ Ext.define('Abada.i18n.Bundle', {
         if (this.data) {
             var value = this.data[key];
             if (value) {
+                var values = [].splice.call(arguments, 1);
+
                 var decoded = Ext.util.Format.htmlDecode(value);
+                if (values) {
+                    var args = [decoded].concat(values);
+                    decoded = Ext.String.format.apply(null, args);
+                }
                 return decoded;
             }
         }
@@ -163,7 +169,7 @@ Ext.define('Abada.i18n.Bundle', {
         var url = '';
         if (this.localePath)
             url += this.localePath + '/';
-        url+='ext-lang'
+        url += 'ext-lang'
         if (language)
             url += '-' + language;
         url += '.js';
