@@ -79,7 +79,7 @@ function getRelativeServerURI(url, array) {
     return result;
 }
 
-function doAjaxrequestJson(url, data, method, ok, merror) {
+function doAjaxrequestJson(url, data, method, grid, wind, ok, merror) {
     Abada.Ajax.requestJson({
         url: url,
         scope: this,
@@ -100,7 +100,16 @@ function doAjaxrequestJson(url, data, method, ok, merror) {
             Ext.Msg.show({
                 msg: ok,
                 buttons: Ext.MessageBox.OK,
-                icon: Ext.MessageBox.INFO
+                icon: Ext.MessageBox.INFO,
+                fn: function(btn) {
+                    if (wind) {
+                        wind.close();
+                    }
+                    if (grid) {
+                        grid.getStore().load();
+                        grid.selModel.deselectAll();
+                    }
+                }
             });
         }
     });
