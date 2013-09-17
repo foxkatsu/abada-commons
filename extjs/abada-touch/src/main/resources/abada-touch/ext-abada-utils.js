@@ -80,9 +80,9 @@ function doAjaxrequestJson(url, data, method, grid, wind, ok, merror) {
                 ,
         failure: function(error) {
             if (error && error.reason) {
-                Ext.MessageBox.alert(merror, error.reason);
+                Ext.Msg.alert(merror, error.reason);
             } else
-                Ext.MessageBox.alert('', merror);
+                Ext.Msg.alert('', merror);
         },
         success: function() {
             Ext.Msg.show({
@@ -95,6 +95,7 @@ function doAjaxrequestJson(url, data, method, grid, wind, ok, merror) {
                     }
                     if (grid) {
                         grid.getStore().load();
+                        grid.selModel.deselectAll();
                     }
                 }
             });
