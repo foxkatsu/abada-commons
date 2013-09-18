@@ -86,7 +86,7 @@ function doAjaxrequestJson(url, data, method, ok, merror) {
         },
         success: function() {
             Ext.Msg.show({
-                msg: ok,
+                message: ok,
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.INFO
             });
