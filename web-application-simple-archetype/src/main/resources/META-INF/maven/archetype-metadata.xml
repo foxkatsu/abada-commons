@@ -134,6 +134,7 @@
             <include>**/*.png</include>
             <include>**/*.scss</include>
             <include>**/*.js</include>
+            <include>**/*.json</include>
             <include>**/*.ftl</include>
             <include>**/*.gif</include>
             <include>**/*.css</include>
