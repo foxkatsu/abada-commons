@@ -73,7 +73,7 @@ function doAjaxrequestJson(url, data, method, ok, merror) {
         scope: this,
         method: method,
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json; charset=UTF-8'
         },
         params:
                 Ext.JSON.encode(data)
