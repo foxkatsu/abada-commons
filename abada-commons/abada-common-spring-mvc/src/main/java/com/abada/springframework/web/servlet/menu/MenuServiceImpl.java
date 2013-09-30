@@ -42,6 +42,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.core.annotation.AnnotationUtils;
 
 /**
  * Menu Entry Service. Search for {@link MenuEntry} and return
@@ -90,18 +91,18 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
         this.menus = menus;
     }
 
-    private void createMenuEntry(Method m) {
+    private void createMenuEntry(Method m,Object bean) {
         //Group
         MenuEntry me = m.getAnnotation(MenuEntry.class);
         String[] groups = SEPARATOR.split(me.menuGroup());
         MenuEntryBean group = this.getCreateGroup(groups, 0, this.getMenus(), me);
         //Entry
-        RequestMapping rm = m.getAnnotation(RequestMapping.class);
-        RequestMapping rc = m.getClass().getAnnotation(RequestMapping.class);
+        RequestMapping rm = m.getAnnotation(RequestMapping.class);        
+        RequestMapping rc = AnnotationUtils.findAnnotation(bean.getClass(), RequestMapping.class);
         MenuEntryBean aux = new MenuEntryBean();
         aux.setIcon(me.icon());
         //FIXME Add ContextPath                
-        aux.setUrl((rc!=null&&rc.value().length>0?rc.value()[0]:"/")+(rm.value().length>0?(rm.value()[0].startsWith("/")?rm.value()[0].substring(1):rm.value()[0]):""));
+        aux.setUrl((rc!=null&&rc.value().length>0?(rc.value()[0].endsWith("/")?rc.value()[0]:rc.value()[0]+"/"):"/")+(rm.value().length>0?(rm.value()[0].startsWith("/")?rm.value()[0].substring(1):rm.value()[0]):""));
         aux.setOrder(me.order());
         aux.setText(me.text());
         aux.setDevices(Arrays.asList(me.devices()));
@@ -118,7 +119,7 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
                 List<Method> listMethod = ReflectionUtils.getMethodsWithAnnotation(bean, MenuEntry.class);
                 if (listMethod != null && !listMethod.isEmpty()) {
                     for (Method m : listMethod) {
-                        createMenuEntry(m);
+                        createMenuEntry(m,bean);
                     }
                 }
             }
