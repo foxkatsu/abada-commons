@@ -30,7 +30,7 @@ Ext.require(['Ext.window.Window']);
 
 Ext.onReady(function() {
     var i18n = Ext.create('Abada.i18n.Bundle', {
-        path: getRelativeURI('${artifactId.replace('.','/')}/web/locale'),
+        path: getRelativeURI('${artifactId.replace('.','/')}/locale'),
         bundle: 'messages',
         insertLocale: false
     });
