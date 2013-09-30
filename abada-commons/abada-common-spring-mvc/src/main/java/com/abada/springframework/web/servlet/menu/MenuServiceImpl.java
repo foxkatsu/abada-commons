@@ -97,10 +97,11 @@ public class MenuServiceImpl extends ApplicationObjectSupport implements BeanPos
         MenuEntryBean group = this.getCreateGroup(groups, 0, this.getMenus(), me);
         //Entry
         RequestMapping rm = m.getAnnotation(RequestMapping.class);
+        RequestMapping rc = m.getClass().getAnnotation(RequestMapping.class);
         MenuEntryBean aux = new MenuEntryBean();
         aux.setIcon(me.icon());
-        //FIXME Add ContextPath
-        aux.setUrl(rm.value()[0]);
+        //FIXME Add ContextPath                
+        aux.setUrl((rc!=null&&rc.value().length>0?rc.value()[0]:"/")+(rm.value().length>0?(rm.value()[0].startsWith("/")?rm.value()[0].substring(1):rm.value()[0]):""));
         aux.setOrder(me.order());
         aux.setText(me.text());
         aux.setDevices(Arrays.asList(me.devices()));
