@@ -37,6 +37,7 @@
         <include>**/*.xml</include>
         <include>**/*.properties</include>
         <include>**/*.js</include>
+        <include>**/*.json</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">

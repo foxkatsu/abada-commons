@@ -28,21 +28,34 @@ Ext.require(['Ext.window.Window']);
 
 
 
-Ext.onReady(function(){   
-
-    var startPanel=Ext.create('Abada.form.field.Date',{});
-    var endPanel=Ext.create('Abada.form.field.Date',{});
-    var cbOncoguide=Ext.create('Abada.form.field.ComboBox',{
-        url:getRelativeServerURI('sampleurl')
-    }); 
-
-    var panel=Ext.create('Ext.panel.Panel',{
-        title:'Estadisticas',
-        height:App.height,
-        items:[
-        cbOncoguide,startPanel,endPanel
-        ]
+Ext.onReady(function() {
+    var i18n = Ext.create('Abada.i18n.Bundle', {
+        path: getRelativeURI('${artifactId.replace('.','/')}/web/locale'),
+        bundle: 'messages',
+        insertLocale: false
     });
 
-    setCentralPanel(panel);        
+    i18n.on('error', function() {
+        i18n.language = i18n.defaultLanguage;
+        i18n.load();
+    });
+
+    i18n.on('loaded', function() {
+        var startPanel = Ext.create('Abada.form.field.Date', {});
+        var endPanel = Ext.create('Abada.form.field.Date', {});
+        var cbOncoguide = Ext.create('Abada.form.field.ComboBox', {
+            url: getRelativeServerURI('sampleurl')
+        });
+
+        var panel = Ext.create('Ext.panel.Panel', {
+            title: 'Estadisticas',
+            height: App.height,
+            items: [
+                cbOncoguide, startPanel, endPanel
+            ]
+        });
+
+        setCentralPanel(panel);
+    });
+    i18n.load();
 });
