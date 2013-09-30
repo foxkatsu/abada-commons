@@ -18,7 +18,7 @@
     </properties>
     <build>
         <plugins>
-            <plugin>
+            <!--plugin>
                 <groupId>com.pyx4me</groupId>
                 <artifactId>proguard-maven-plugin</artifactId>
                 <version>2.0.4</version>
@@ -38,12 +38,11 @@
                     <outjar>${project.artifactId}-${project.version}-obf.jar</outjar> 
                     <outputDirectory>${project.build.directory}</outputDirectory> 
                     <options>    
-                        <!--option>-allowaccessmodification</option-->
+
                         <option>-keepdirectories</option>
                         <option>-dontshrink</option>
                         <option>-dontoptimize</option>
-                        
-                        <!--<option>-keepparameternames</option>-->
+
                         <option>-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod</option>
                         <option>-keep public class * {public protected *;}</option>
                         <option>-keep @${project.parent.groupId}.ofuscation.annotation.NoOfuscation class * {public protected private *;public &lt;methods&gt;;}</option>
@@ -64,7 +63,7 @@
                         <scope>runtime</scope>
                     </dependency>
                 </dependencies>
-            </plugin>
+            </plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -74,7 +73,19 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-              <plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
@@ -87,7 +98,7 @@
                         <Export-Package>com.abada.ofuscation.annotation</Export-Package>
                         <!--<Private-Package>org.apache.felix.log.impl</Private-Package>
                         <Import-Package>java.lang.annotation;version="1.0.0"</Import-Package>-->
-                  </instructions>
+                    </instructions>
                 </configuration>
             </plugin>
         </plugins>
