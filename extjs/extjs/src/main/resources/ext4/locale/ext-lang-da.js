@@ -261,8 +261,8 @@ Ext.define("Ext.locale.da.form.field.HtmlEditor", {
 
 Ext.define("Ext.locale.da.grid.header.Container", {
     override: "Ext.grid.header.Container",
-    sortAscText: "Sortér stigende",
-    sortDescText: "Sortér faldende",
+    sortAscText: "Sort&eacute;r stigende",
+    sortDescText: "Sort&eacute;r faldende",
     lockText: "Lås kolonne",
     unlockText: "Fjern lås fra kolonne",
     columnsText: "Kolonner"
@@ -271,7 +271,7 @@ Ext.define("Ext.locale.da.grid.header.Container", {
 Ext.define("Ext.locale.da.grid.GroupingFeature", {
     override: "Ext.grid.GroupingFeature",
     emptyGroupText: '(Ingen)',
-    groupByText: 'Gruppér efter dette felt',
+    groupByText: 'Grupp&eacute;r efter dette felt',
     showGroupsText: 'Vis i grupper' //should this be sort in groups?
 });
 

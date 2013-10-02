@@ -28,19 +28,19 @@ Build date: 2013-05-16 14:36:50 (f9be68accb407158ba2b1be2c226a6ce1f649314)
 Ext.onReady(function() {
 
     if (Ext.Date) {
-        Ext.Date.shortMonthNames = ["Janv", "Févr", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"];
+        Ext.Date.shortMonthNames = ["Janv", "F&eacute;vr", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "D&eacute;c"];
 
         Ext.Date.getShortMonthName = function(month) {
             return Ext.Date.shortMonthNames[month];
         };
 
-        Ext.Date.monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        Ext.Date.monthNames = ["Janvier", "F&eacute;vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "D&eacute;cembre"];
 
         Ext.Date.monthNumbers = {
             "Janvier": 0,
             "Janv": 0,
-            "Février": 1,
-            "Févr": 1,
+            "F&eacute;vrier": 1,
+            "F&eacute;vr": 1,
             "Mars": 2,
             "Avril": 3,
             "Avr": 3,
@@ -55,8 +55,8 @@ Ext.onReady(function() {
             "Oct": 9,
             "Novembre": 10,
             "Nov": 10,
-            "Décembre": 11,
-            "Déc": 11
+            "D&eacute;cembre": 11,
+            "D&eacute;c": 11
         };
 
         Ext.Date.getMonthNumber = function(name) {
@@ -94,7 +94,7 @@ Ext.define("Ext.locale.fr.view.View", {
 
 Ext.define("Ext.locale.fr.grid.plugin.DragDrop", {
     override: "Ext.grid.plugin.DragDrop",
-    dragText: "{0} ligne{1} sélectionnée{1}"
+    dragText: "{0} ligne{1} s&eacute;lectionn&eacute;e{1}"
 });
 
 Ext.define("Ext.locale.fr.tab.Tab", {
@@ -111,13 +111,13 @@ Ext.define("Ext.locale.fr.view.AbstractView", {
 Ext.define("Ext.locale.fr.picker.Date", {
     override: "Ext.picker.Date",
     todayText: "Aujourd'hui",
-    minText: "Cette date est antérieure à la date minimum",
-    maxText: "Cette date est postérieure à la date maximum",
+    minText: "Cette date est ant&eacute;rieure à la date minimum",
+    maxText: "Cette date est post&eacute;rieure à la date maximum",
     disabledDaysText: "",
     disabledDatesText: "",
     nextText: 'Mois suivant (CTRL+Flèche droite)',
-    prevText: "Mois précédent (CTRL+Flèche gauche)",
-    monthYearText: "Choisissez un mois (CTRL+Flèche haut ou bas pour changer d'année.)",
+    prevText: "Mois pr&eacute;c&eacute;dent (CTRL+Flèche gauche)",
+    monthYearText: "Choisissez un mois (CTRL+Flèche haut ou bas pour changer d'ann&eacute;e.)",
     todayTip: "{0} (Barre d'espace)",
     format: "d/m/y",
     startDay: 1
@@ -134,12 +134,12 @@ Ext.define("Ext.locale.fr.toolbar.Paging", {
     beforePageText: "Page",
     afterPageText: "sur {0}",
     firstText: "Première page",
-    prevText: "Page précédente",
+    prevText: "Page pr&eacute;c&eacute;dente",
     nextText: "Page suivante",
     lastText: "Dernière page",
     refreshText: "Actualiser la page",
     displayMsg: "Page courante {0} - {1} sur {2}",
-    emptyMsg: 'Aucune donnée à afficher'
+    emptyMsg: 'Aucune donn&eacute;e à afficher'
 });
 
 Ext.define("Ext.locale.fr.form.Basic", {
@@ -168,7 +168,7 @@ Ext.define("Ext.locale.fr.form.field.Number", {
     minText: "La valeur minimum de ce champ doit être de {0}",
     maxText: "La valeur maximum de ce champ doit être de {0}",
     nanText: "{0} n'est pas un nombre valide",
-    negativeText: "La valeur de ce champ ne peut être négative"    
+    negativeText: "La valeur de ce champ ne peut être n&eacute;gative"    
 });
 
 Ext.define("Ext.locale.fr.form.field.File", { 
@@ -178,10 +178,10 @@ Ext.define("Ext.locale.fr.form.field.File", {
 
 Ext.define("Ext.locale.fr.form.field.Date", {
     override: "Ext.form.field.Date",
-    disabledDaysText: "Désactivé",
-    disabledDatesText: "Désactivé",
-    minText: "La date de ce champ ne peut être antérieure au {0}",
-    maxText: "La date de ce champ ne peut être postérieure au {0}",
+    disabledDaysText: "D&eacute;sactiv&eacute;",
+    disabledDatesText: "D&eacute;sactiv&eacute;",
+    minText: "La date de ce champ ne peut être ant&eacute;rieure au {0}",
+    maxText: "La date de ce champ ne peut être post&eacute;rieure au {0}",
     invalidText: "{0} n'est pas une date valide - elle doit être au format suivant: {1}",
     format: "d/m/y",
     altFormats: "d/m/Y|d-m-y|d-m-Y|d/m|d-m|dm|dmy|dmY|d|Y-m-d"
@@ -200,8 +200,8 @@ Ext.define("Ext.locale.fr.form.field.VTypes", {
     override: "Ext.form.field.VTypes",
     emailText: 'Ce champ doit contenir une adresse email au format: "usager@example.com"',
     urlText: 'Ce champ doit contenir une URL au format suivant: "http:/' + '/www.example.com"',
-    alphaText: 'Ce champ ne peut contenir que des lettres et le caractère souligné (_)',
-    alphanumText: 'Ce champ ne peut contenir que des caractères alphanumériques ainsi que le caractère souligné (_)'
+    alphaText: 'Ce champ ne peut contenir que des lettres et le caractère soulign&eacute; (_)',
+    alphanumText: 'Ce champ ne peut contenir que des caractères alphanum&eacute;riques ainsi que le caractère soulign&eacute; (_)'
 });
 
 Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
@@ -212,17 +212,17 @@ Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
         buttonTips: {
             bold: {
                 title: 'Gras (Ctrl+B)',
-                text: 'Met le texte sélectionné en gras.',
+                text: 'Met le texte s&eacute;lectionn&eacute; en gras.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             italic: {
                 title: 'Italique (Ctrl+I)',
-                text: 'Met le texte sélectionné en italique.',
+                text: 'Met le texte s&eacute;lectionn&eacute; en italique.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             underline: {
-                title: 'Souligné (Ctrl+U)',
-                text: 'Souligne le texte sélectionné.',
+                title: 'Soulign&eacute; (Ctrl+U)',
+                text: 'Souligne le texte s&eacute;lectionn&eacute;.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             increasefontsize: {
@@ -231,18 +231,18 @@ Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             decreasefontsize: {
-                title: 'Réduire la police',
-                text: 'Réduit la taille de la police.',
+                title: 'R&eacute;duire la police',
+                text: 'R&eacute;duit la taille de la police.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             backcolor: {
                 title: 'Couleur de surbrillance',
-                text: 'Modifie la couleur de fond du texte sélectionné.',
+                text: 'Modifie la couleur de fond du texte s&eacute;lectionn&eacute;.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             forecolor: {
                 title: 'Couleur de police',
-                text: 'Modifie la couleur du texte sélectionné.',
+                text: 'Modifie la couleur du texte s&eacute;lectionn&eacute;.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             justifyleft: {
@@ -262,12 +262,12 @@ Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
             },
             insertunorderedlist: {
                 title: 'Liste à puce',
-                text: 'Démarre une liste à puce.',
+                text: 'D&eacute;marre une liste à puce.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             insertorderedlist: {
-                title: 'Liste numérotée',
-                text: 'Démarre une liste numérotée.',
+                title: 'Liste num&eacute;rot&eacute;e',
+                text: 'D&eacute;marre une liste num&eacute;rot&eacute;e.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             createlink: {
@@ -277,7 +277,7 @@ Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
             },
             sourceedit: {
                 title: 'Code source',
-                text: 'Basculer en mode édition du code source.',
+                text: 'Basculer en mode &eacute;dition du code source.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             }
         }
@@ -287,7 +287,7 @@ Ext.define("Ext.locale.fr.form.field.HtmlEditor", {
 Ext.define("Ext.locale.fr.grid.header.Container", {
     override: "Ext.grid.header.Container",
     sortAscText: "Tri croissant",
-    sortDescText: "Tri décroissant",
+    sortDescText: "Tri d&eacute;croissant",
     columnsText: "Colonnes"
 });
 
@@ -300,7 +300,7 @@ Ext.define("Ext.locale.fr.grid.GroupingFeature", {
 
 Ext.define("Ext.locale.fr.grid.PropertyColumnModel", {
     override: "Ext.grid.PropertyColumnModel",
-    nameText: "Propriété",
+    nameText: "Propri&eacute;t&eacute;",
     valueText: "Valeur",
     dateFormat: "d/m/Y",
     trueText: "vrai",
@@ -309,8 +309,8 @@ Ext.define("Ext.locale.fr.grid.PropertyColumnModel", {
 
 Ext.define("Ext.locale.fr.form.field.Time", {
     override: "Ext.form.field.Time",
-    minText: "L'heure de ce champ ne peut être antérieure à {0}",
-    maxText: "L'heure de ce champ ne peut être postérieure à {0}",
+    minText: "L'heure de ce champ ne peut être ant&eacute;rieure à {0}",
+    maxText: "L'heure de ce champ ne peut être post&eacute;rieure à {0}",
     invalidText: "{0} n'est pas une heure valide",
     format: "H:i",
     altFormats: "g:ia|g:iA|g:i a|g:i A|h:i|g:i|H:i|ga|h a|g a|g A|gi|hi|Hi|gia|hia|g|H"
@@ -318,12 +318,12 @@ Ext.define("Ext.locale.fr.form.field.Time", {
 
 Ext.define("Ext.locale.fr.form.CheckboxGroup", {
     override: "Ext.form.CheckboxGroup",
-    blankText: "Vous devez sélectionner au moins un élément dans ce groupe"
+    blankText: "Vous devez s&eacute;lectionner au moins un &eacute;l&eacute;ment dans ce groupe"
 });
 
 Ext.define("Ext.locale.fr.form.RadioGroup", {
     override: "Ext.form.RadioGroup",
-    blankText: "Vous devez sélectionner au moins un élément dans ce groupe"
+    blankText: "Vous devez s&eacute;lectionner au moins un &eacute;l&eacute;ment dans ce groupe"
 });
 
 Ext.define("Ext.locale.fr.window.MessageBox", {

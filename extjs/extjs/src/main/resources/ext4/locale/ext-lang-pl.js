@@ -118,7 +118,7 @@ Ext.define("Ext.locale.pl.picker.Date", {
     startDay: 1,
     todayText: "Dzisiaj",
     minText: "Data jest wcześniejsza od daty minimalnej",
-    maxText: "Data jest późniejsza od daty maksymalnej",
+    maxText: "Data jest p&oacute;źniejsza od daty maksymalnej",
     disabledDaysText: "",
     disabledDatesText: "",
     nextText: "Następny miesiąc (Control+StrzałkaWPrawo)",
@@ -150,8 +150,8 @@ Ext.define("Ext.locale.pl.toolbar.Paging", {
 
 Ext.define("Ext.locale.pl.form.field.Text", {
     override: "Ext.form.field.Text",
-    minLengthText: "Minimalna ilość znaków dla tego pola to {0}",
-    maxLengthText: "Maksymalna ilość znaków dla tego pola to {0}",
+    minLengthText: "Minimalna ilość znak&oacute;w dla tego pola to {0}",
+    maxLengthText: "Maksymalna ilość znak&oacute;w dla tego pola to {0}",
     blankText: "To pole jest wymagane",
     regexText: "",
     emptyText: null
@@ -168,7 +168,7 @@ Ext.define("Ext.locale.pl.form.field.Date", {
     override: "Ext.form.field.Date",
     disabledDaysText: "Wyłączony",
     disabledDatesText: "Wyłączony",
-    minText: "Data w tym polu musi być późniejsza od {0}",
+    minText: "Data w tym polu musi być p&oacute;źniejsza od {0}",
     maxText: "Data w tym polu musi być wcześniejsza od {0}",
     invalidText: "{0} to nie jest prawidłowa data - prawidłowy format daty {1}",
     format: "Y-m-d",
@@ -224,8 +224,8 @@ Ext.define("Ext.locale.pl.form.field.HtmlEditor", {
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             backcolor: {
-                title: 'Wyróżnienie',
-                text: 'Zmień kolor wyróżnienia zaznaczonego tekstu.',
+                title: 'Wyr&oacute;żnienie',
+                text: 'Zmień kolor wyr&oacute;żnienia zaznaczonego tekstu.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             forecolor: {
@@ -235,17 +235,17 @@ Ext.define("Ext.locale.pl.form.field.HtmlEditor", {
             },
             justifyleft: {
                 title: 'Do lewej',
-                text: 'Wyrównaj tekst do lewej.',
+                text: 'Wyr&oacute;wnaj tekst do lewej.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             justifycenter: {
                 title: 'Wyśrodkuj',
-                text: 'Wyrównaj tekst do środka.',
+                text: 'Wyr&oacute;wnaj tekst do środka.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             justifyright: {
                 title: 'Do prawej',
-                text: 'Wyrównaj tekst do prawej.',
+                text: 'Wyr&oacute;wnaj tekst do prawej.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             insertunorderedlist: {
@@ -264,8 +264,8 @@ Ext.define("Ext.locale.pl.form.field.HtmlEditor", {
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             },
             sourceedit: {
-                title: 'Edycja źródła',
-                text: 'Przełącz w tryb edycji źródła.',
+                title: 'Edycja źr&oacute;dła',
+                text: 'Przełącz w tryb edycji źr&oacute;dła.',
                 cls: Ext.baseCSSPrefix + 'html-editor-tip'
             }
         }

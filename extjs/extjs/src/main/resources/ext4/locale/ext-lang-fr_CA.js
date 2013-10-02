@@ -26,19 +26,19 @@ Build date: 2013-05-16 14:36:50 (f9be68accb407158ba2b1be2c226a6ce1f649314)
 Ext.onReady(function() {
 
     if (Ext.Date) {
-        Ext.Date.shortMonthNames = ["Janv", "Févr", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"];
+        Ext.Date.shortMonthNames = ["Janv", "F&eacute;vr", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "D&eacute;c"];
 
         Ext.Date.getShortMonthName = function(month) {
             return Ext.Date.shortMonthNames[month];
         };
 
-        Ext.Date.monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        Ext.Date.monthNames = ["Janvier", "F&eacute;vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "D&eacute;cembre"];
 
         Ext.Date.monthNumbers = {
             "Janvier": 0,
             "Janv": 0,
-            "Février": 1,
-            "Févr": 1,
+            "F&eacute;vrier": 1,
+            "F&eacute;vr": 1,
             "Mars": 2,
             "Avril": 3,
             "Avr": 3,
@@ -53,8 +53,8 @@ Ext.onReady(function() {
             "Oct": 9,
             "Novembre": 10,
             "Nov": 10,
-            "Décembre": 11,
-            "Déc": 11
+            "D&eacute;cembre": 11,
+            "D&eacute;c": 11
         };
 
         Ext.Date.getMonthNumber = function(name) {
@@ -86,7 +86,7 @@ Ext.define("Ext.locale.fr_CA.view.View", {
 
 Ext.define("Ext.locale.fr_CA.grid.plugin.DragDrop", {
     override: "Ext.grid.plugin.DragDrop",
-    dragText: "{0} ligne(s) sélectionné(s)"
+    dragText: "{0} ligne(s) s&eacute;lectionn&eacute;(s)"
 });
 
 Ext.define("Ext.locale.fr_CA.tab.Tab", {
@@ -112,9 +112,9 @@ Ext.define("Ext.locale.fr_CA.picker.Date", {
     maxText: "Cette date est plus grande que la date maximum",
     disabledDaysText: "",
     disabledDatesText: "",
-    nextText: 'Prochain mois (CTRL+Fléche droite)',
-    prevText: 'Mois précédent (CTRL+Fléche gauche)',
-    monthYearText: 'Choissisez un mois (CTRL+Fléche haut ou bas pour changer d\'année.)',
+    nextText: 'Prochain mois (CTRL+Fl&eacute;che droite)',
+    prevText: 'Mois pr&eacute;c&eacute;dent (CTRL+Fl&eacute;che gauche)',
+    monthYearText: 'Choissisez un mois (CTRL+Fl&eacute;che haut ou bas pour changer d\'ann&eacute;e.)',
     todayTip: "{0} (Barre d'espace)",
     format: "d/m/y"
 });
@@ -124,12 +124,12 @@ Ext.define("Ext.locale.fr_CA.toolbar.Paging", {
     beforePageText: "Page",
     afterPageText: "de {0}",
     firstText: "Première page",
-    prevText: "Page précédente",
+    prevText: "Page pr&eacute;c&eacute;dente",
     nextText: "Prochaine page",
     lastText: "Dernière page",
     refreshText: "Recharger la page",
     displayMsg: "Page courante {0} - {1} de {2}",
-    emptyMsg: 'Aucune donnée à afficher'
+    emptyMsg: 'Aucune donn&eacute;e à afficher'
 });
 
 Ext.define("Ext.locale.fr_CA.form.field.Text", {
@@ -146,7 +146,7 @@ Ext.define("Ext.locale.fr_CA.form.field.Number", {
     minText: "La valeur minimum de ce champ doit être de {0}",
     maxText: "La valeur maximum de ce champ doit être de {0}",
     nanText: "{0} n'est pas un nombre valide",
-    negativeText: "La valeur de ce champ ne peut être négative"    
+    negativeText: "La valeur de ce champ ne peut être n&eacute;gative"    
 });
 
 Ext.define("Ext.locale.fr_CA.form.field.File", { 
@@ -156,8 +156,8 @@ Ext.define("Ext.locale.fr_CA.form.field.File", {
 
 Ext.define("Ext.locale.fr_CA.form.field.Date", {
     override: "Ext.form.field.Date",
-    disabledDaysText: "Désactivé",
-    disabledDatesText: "Désactivé",
+    disabledDaysText: "D&eacute;sactiv&eacute;",
+    disabledDatesText: "D&eacute;sactiv&eacute;",
     minText: "La date de ce champ doit être avant le {0}",
     maxText: "La date de ce champ doit être après le {0}",
     invalidText: "{0} n'est pas une date valide - il doit être au format suivant: {1}",
@@ -177,22 +177,22 @@ Ext.define("Ext.locale.fr_CA.form.field.VTypes", {
     override: "Ext.form.field.VTypes",
     emailText: 'Ce champ doit contenir un courriel et doit être sous ce format: "usager@example.com"',
     urlText: 'Ce champ doit contenir une URL sous le format suivant: "http:/' + '/www.example.com"',
-    alphaText: 'Ce champ ne peut contenir que des lettres et le caractère souligné (_)',
-    alphanumText: 'Ce champ ne peut contenir que des caractères alphanumériques ainsi que le caractère souligné (_)'
+    alphaText: 'Ce champ ne peut contenir que des lettres et le caractère soulign&eacute; (_)',
+    alphanumText: 'Ce champ ne peut contenir que des caractères alphanum&eacute;riques ainsi que le caractère soulign&eacute; (_)'
 });
 
 Ext.define("Ext.locale.fr_CA.grid.header.Container", {
     override: "Ext.grid.header.Container",
     sortAscText: "Tri ascendant",
     sortDescText: "Tri descendant",
-    lockText: "Verrouillé la colonne",
-    unlockText: "Déverrouillé la colonne",
+    lockText: "Verrouill&eacute; la colonne",
+    unlockText: "D&eacute;verrouill&eacute; la colonne",
     columnsText: "Colonnes"
 });
 
 Ext.define("Ext.locale.fr_CA.grid.PropertyColumnModel", {
     override: "Ext.grid.PropertyColumnModel",
-    nameText: "Propriété",
+    nameText: "Propri&eacute;t&eacute;",
     valueText: "Valeur",
     dateFormat: "d/m/Y"
 });
