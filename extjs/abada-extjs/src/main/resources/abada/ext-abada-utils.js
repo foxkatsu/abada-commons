@@ -106,8 +106,8 @@ function doAjaxrequestJson(url, data, method, grid, wind, ok, merror) {
                         wind.close();
                     }
                     if (grid) {
-                        grid.getStore().load();
                         grid.selModel.deselectAll();
+                        grid.getStore().load();                        
                     }
                 }
             });
