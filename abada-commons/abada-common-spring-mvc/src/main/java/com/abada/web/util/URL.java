@@ -49,10 +49,15 @@ public class URL {
     public static  Map<String,Object> parseRequest(HttpServletRequest request){
         Map<String,Object> result=new HashMap<String, Object>();
         String name;
+        String [] aux;
         Enumeration enu=request.getParameterNames();
         while (enu.hasMoreElements()){
             name=(String) enu.nextElement();
-            result.put(name, request.getParameter(name));
+            aux=request.getParameterValues(name);
+            if (aux.length==1)
+                result.put(name, aux[0]);
+            else
+                result.put(name, aux);
         }
         return result;
     }
