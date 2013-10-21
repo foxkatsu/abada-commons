@@ -5,11 +5,11 @@
     <parent>
         <artifactId>abada-commons</artifactId>
         <groupId>com.abada</groupId>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
     </parent>
     <groupId>com.abada</groupId>
     <artifactId>abada-common-gson</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <name>abada-common-gson</name>
     <packaging>bundle</packaging>
     <url>http://maven.apache.org</url>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.abada</groupId>
             <artifactId>abada-common-extjs</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
     </dependencies>
     <build>

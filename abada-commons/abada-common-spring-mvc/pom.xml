@@ -5,11 +5,11 @@
     <parent>
         <artifactId>abada-commons</artifactId>
         <groupId>com.abada</groupId>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
     </parent>
     <groupId>com.abada</groupId>
     <artifactId>abada-common-spring-mvc</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <name>abada-common-spring-mvc</name>
     <packaging>bundle</packaging>
     <url>http://www.abadasoft.com</url>
@@ -134,12 +134,12 @@
         <dependency>
             <groupId>com.abada</groupId>
             <artifactId>abada-common-spring-orm</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
         <dependency>
             <groupId>com.abada</groupId>
             <artifactId>abada-common-json</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

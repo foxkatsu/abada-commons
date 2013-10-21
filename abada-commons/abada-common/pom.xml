@@ -5,11 +5,11 @@
     <parent>
         <artifactId>abada-commons</artifactId>
         <groupId>com.abada</groupId>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
     </parent>
     <groupId>com.abada</groupId>
     <artifactId>abada-common</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <name>abada-common</name>
     <packaging>bundle</packaging>
     <url>http://www.abadasoft.com</url>
