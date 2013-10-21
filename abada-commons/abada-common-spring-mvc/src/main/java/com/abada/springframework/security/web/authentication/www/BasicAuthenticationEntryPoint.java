@@ -41,8 +41,8 @@ public class BasicAuthenticationEntryPoint extends org.springframework.security.
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        response.addHeader("WWW-Authenticate", "xBasic realm=\"" + this.getRealmName() + "\"");
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
+        response.addHeader("WWW-Authenticate", "Basic realm=\"" + this.getRealmName() + "\"");
+        response.sendError(HttpServletResponse.SC_FORBIDDEN, authException.getMessage());
     }
 
 }

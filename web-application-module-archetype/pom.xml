@@ -4,7 +4,7 @@
 
   <groupId>com.abada</groupId>
   <artifactId>web-application-module-archetype</artifactId>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.6-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>web-application-module-archetype</name>

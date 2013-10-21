@@ -51,6 +51,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.codec.Base64;
 
 /**
  *
@@ -101,10 +102,11 @@ public class HtmlAuthenticationProvider implements AuthenticationProvider {
         HttpResponse httpResponse = null;
         HttpEntity entity = null;
         try {
-            httpclient.getCredentialsProvider().setCredentials(
-                    new AuthScope(AuthScope.ANY),
-                    new UsernamePasswordCredentials(upat.getPrincipal().toString(), upat.getCredentials().toString()));
+//            httpclient.getCredentialsProvider().setCredentials(
+//                    new AuthScope(AuthScope.ANY),
+//                    new UsernamePasswordCredentials(upat.getPrincipal().toString(), upat.getCredentials().toString()));
             httpget = new HttpGet(url.toURI().toASCIIString());
+            httpget.setHeader("Authorization", getAuthString(upat.getPrincipal().toString(),upat.getCredentials().toString()));
             httpResponse = httpclient.execute(httpget);
             entity = httpResponse.getEntity();
 
@@ -184,5 +186,14 @@ public class HtmlAuthenticationProvider implements AuthenticationProvider {
         UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(upat.getPrincipal(), upat.getCredentials(), roles);
         result.setDetails(upat.getDetails());
         return result;
+    }
+
+    private String getAuthString(String username, String password) {
+        StringBuilder sb=new StringBuilder("Basic ");
+        StringBuilder sb2=new StringBuilder(username);
+        sb2.append(':');
+        sb2.append(password);
+        sb.append(new String(Base64.encode(sb2.toString().getBytes())));
+        return sb.toString();
     }
 }
