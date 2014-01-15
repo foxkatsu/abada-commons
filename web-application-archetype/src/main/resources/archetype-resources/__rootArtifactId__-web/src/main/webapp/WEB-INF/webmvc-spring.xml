@@ -55,7 +55,7 @@
         </property>        
         <property name="customModelAndViewResolvers">
             <list>
-                <bean class="com.katsu.springframework.web.servlet.view.KatsuModelAndViewResolver" />
+                <bean class="com.katsu.springframework.web.servlet.view.ModelAndViewResolver" />
             </list>
         </property>
         <property name="customArgumentResolver" >

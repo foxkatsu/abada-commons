@@ -41,7 +41,7 @@ import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
  *
  * @author katsu
  */
-public class AbadaModelAndViewResolver extends ApplicationObjectSupport implements ModelAndViewResolver {
+public class ModelAndViewResolver extends ApplicationObjectSupport implements ModelAndViewResolver {
 
     @Override
     public ModelAndView resolveModelAndView(Method handlerMethod, Class handlerType, Object returnValue, ExtendedModelMap implicitModel, NativeWebRequest webRequest) {
