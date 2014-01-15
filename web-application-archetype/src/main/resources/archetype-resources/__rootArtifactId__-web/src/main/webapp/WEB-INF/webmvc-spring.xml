@@ -118,7 +118,7 @@
     
     <bean id="dwmLoader" class="com.katsu.dwm.Loader" init-method="load" /> 
      
-    <bean id="restTemplateFactory" class="com.katsu.springframework.web.client.RestTemplateFactory" >
+    <!--bean id="restTemplateFactory" class="com.katsu.springframework.web.client.RestTemplateFactory" >
         <property name="messageConverters">
             <list>
                 <ref bean="jsonConverter" />
@@ -126,6 +126,6 @@
             </list>
         </property>
     </bean>
-    <bean id="restTemplate" class="com.katsu.springframework.web.client.RestTemplate" factory-bean="restTemplateFactory" factory-method="createInstance" scope="prototype"/>              
+    <bean id="restTemplate" class="com.katsu.springframework.web.client.RestTemplate" factory-bean="restTemplateFactory" factory-method="createInstance" scope="prototype"/-->              
 </beans>
 
