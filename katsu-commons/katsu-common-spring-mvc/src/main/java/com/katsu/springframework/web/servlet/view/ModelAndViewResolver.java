@@ -35,13 +35,12 @@ import org.springframework.ui.ExtendedModelMap;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
 
 /**
  *
  * @author katsu
  */
-public class ModelAndViewResolver extends ApplicationObjectSupport implements ModelAndViewResolver {
+public class ModelAndViewResolver extends ApplicationObjectSupport implements org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver {
 
     @Override
     public ModelAndView resolveModelAndView(Method handlerMethod, Class handlerType, Object returnValue, ExtendedModelMap implicitModel, NativeWebRequest webRequest) {
