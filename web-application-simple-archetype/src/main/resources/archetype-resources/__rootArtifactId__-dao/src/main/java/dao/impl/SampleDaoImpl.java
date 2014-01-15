@@ -8,7 +8,7 @@ package ${package}.dao.impl;
  * #%L
  * Web Archetype
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -31,7 +31,7 @@ import ${package}.entity.SampleEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
-import com.abada.springframework.orm.jpa.support.JpaDaoUtils;
+import com.katsu.springframework.orm.jpa.support.JpaDaoUtils;
 
 
 /**

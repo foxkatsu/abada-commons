@@ -6,7 +6,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -53,7 +53,7 @@
         </property>        
         <property name="customModelAndViewResolvers">
             <list>
-                <bean class="com.abada.springframework.web.servlet.view.AbadaModelAndViewResolver" />
+                <bean class="com.katsu.springframework.web.servlet.view.KatsuModelAndViewResolver" />
             </list>
         </property>        
     </bean>
@@ -63,7 +63,7 @@
         <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
     </bean>
 
-    <bean id="jsonConverter" class="com.abada.springframework.http.converter.json.JsonHttpMessageConverter" >
+    <bean id="jsonConverter" class="com.katsu.springframework.http.converter.json.JsonHttpMessageConverter" >
         <property name="jsonProperties">
             <map>
                 <entry key="DATE_FORMAT" value="yyyy-MM-dd HH:mm:ss" />
@@ -71,7 +71,7 @@
         </property>
     </bean>
     
-    <!--bean id="jsonSerializer" class="com.abada.gson.GsonImpl">
+    <!--bean id="jsonSerializer" class="com.katsu.gson.GsonImpl">
         <property name="jsonProperties">
             <map>
                 <entry key="DATE_FORMAT" value="yyyy-MM-dd HH:mm:ss" />
@@ -88,7 +88,7 @@
         <property name="order" value="1" />
         <!--property name="interceptors">
             <list>
-                <bean class="com.abada.jbpmserver.handler.SessionCheckerHandler">
+                <bean class="com.katsu.jbpmserver.handler.SessionCheckerHandler">
                     <property name="session" ref="ksession1"/>                    
                     <property name="taskService" ref="taskService"/>
                 </bean>
@@ -110,7 +110,7 @@
         <property name="suffix" value=".ftl"/>
     </bean>
         
-    <bean id="jsonView" class="com.abada.springframework.web.servlet.view.JsonView">
+    <bean id="jsonView" class="com.katsu.springframework.web.servlet.view.JsonView">
         <property name="jsonProperties">
             <map>
                 <entry key="DATE_FORMAT" value="yyyy-MM-dd HH:mm:ss" />

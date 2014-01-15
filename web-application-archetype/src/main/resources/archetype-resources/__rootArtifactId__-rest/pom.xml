@@ -3,7 +3,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -34,39 +34,11 @@
     </parent>
     <name>${rootArtifactId}-rest</name>
     <url>http://maven.apache.org</url>
-
-    <repositories>
-        <repository>
-            <id>abada</id>
-            <name>abada-releases</name>
-            <url>http://imasd.abadasoft.com:8080/artifactory/all</url>
-        </repository>
-        <repository>
-            <id>org.springframework.maven.milestone</id>
-            <name>Spring Maven Milestone Repository</name>
-            <url>http://maven.springframework.org/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.abada</groupId>
-            <artifactId>abada-common-spring-mvc</artifactId>
-            <version>1.2.2</version>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-common-spring-mvc</artifactId>
+            <version>2.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>

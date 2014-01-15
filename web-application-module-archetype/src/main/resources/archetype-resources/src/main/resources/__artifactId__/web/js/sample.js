@@ -2,7 +2,7 @@
  * #%L
  * Web Archetype Module for DWM
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@ Ext.require(['Ext.window.Window']);
 
 
 Ext.onReady(function() {
-    var i18n = Ext.create('Abada.i18n.Bundle', {
+    var i18n = Ext.create('Katsu.i18n.Bundle', {
         path: getRelativeURI('${artifactId.replace('.','/')}/locale'),
         bundle: 'messages',
         insertLocale: false
@@ -41,9 +41,9 @@ Ext.onReady(function() {
     });
 
     i18n.on('loaded', function() {
-        var startPanel = Ext.create('Abada.form.field.Date', {});
-        var endPanel = Ext.create('Abada.form.field.Date', {});
-        var cbOncoguide = Ext.create('Abada.form.field.ComboBox', {
+        var startPanel = Ext.create('Katsu.form.field.Date', {});
+        var endPanel = Ext.create('Katsu.form.field.Date', {});
+        var cbOncoguide = Ext.create('Katsu.form.field.ComboBox', {
             url: getRelativeServerURI('sampleurl')
         });
 

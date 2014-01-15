@@ -11,7 +11,7 @@ package ${package}.web.controller;
  * #%L
  * Web Archetype
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -29,9 +29,9 @@ package ${package}.web.controller;
  * #L%
  */
 
-import com.abada.extjs.ExtjsStore;
-import com.abada.springframework.web.servlet.menu.MenuEntry;
-import com.abada.springframework.web.servlet.menu.MenuService;
+import com.katsu.extjs.ExtjsStore;
+import com.katsu.springframework.web.servlet.menu.MenuEntry;
+import com.katsu.springframework.web.servlet.menu.MenuService;
 import java.util.Arrays;
 import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
@@ -72,7 +72,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/exit.htm", method = RequestMethod.GET)
-    @MenuEntry(icon = "images/logout.png", menuGroup = "Salir", order = 0, text = "Salir",devices = {com.abada.springframework.web.servlet.menu.Device.DESKTOP, com.abada.springframework.web.servlet.menu.Device.MOBILE, com.abada.springframework.web.servlet.menu.Device.TABLET})
+    @MenuEntry(icon = "images/logout.png", menuGroup = "Salir", order = 0, text = "Salir",devices = {com.katsu.springframework.web.servlet.menu.Device.DESKTOP, com.katsu.springframework.web.servlet.menu.Device.MOBILE, com.katsu.springframework.web.servlet.menu.Device.TABLET})
     public String getExit(HttpServletRequest request, Model model) {
         model.addAttribute("js", Arrays.asList("js/exit.js"));
         return "dynamic/login";
@@ -108,13 +108,13 @@ public class LoginController {
             }
         }
         ExtjsStore result = new ExtjsStore();
-        com.abada.springframework.web.servlet.menu.Device deviceAux;
+        com.katsu.springframework.web.servlet.menu.Device deviceAux;
         if (device.isMobile())
-            deviceAux=com.abada.springframework.web.servlet.menu.Device.MOBILE;
+            deviceAux=com.katsu.springframework.web.servlet.menu.Device.MOBILE;
         else if (device.isNormal())
-            deviceAux=com.abada.springframework.web.servlet.menu.Device.DESKTOP;
+            deviceAux=com.katsu.springframework.web.servlet.menu.Device.DESKTOP;
         else
-            deviceAux=com.abada.springframework.web.servlet.menu.Device.TABLET;
+            deviceAux=com.katsu.springframework.web.servlet.menu.Device.TABLET;
         result.setData(this.menuService.getMenus(request.getContextPath(),deviceAux,locale, roles));
         return result;
     }

@@ -2,7 +2,7 @@
  * #%L
  * Cleia
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -24,11 +24,11 @@
  * and open the template in the editor.
  */
 Ext.require([
-    'Abada.Ajax',
+    'Katsu.Ajax',
     ]);
 
 Ext.onReady(function() {            
-    /*Abada.Ajax.request({
+    /*Katsu.Ajax.request({
         url: Oggi.urlJbpmServer+'rs/identity/sid/invalidate',
         method:'POST',
         success: function(result,request) {          

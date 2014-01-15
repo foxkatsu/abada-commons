@@ -3,7 +3,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -41,35 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>abada</id>
-            <name>abada-releases</name>
-            <url>http://imasd.abadasoft.com:8080/artifactory/all</url>
-        </repository>
-        <repository>
-            <id>org.springframework.maven.milestone</id>
-            <name>Spring Maven Milestone Repository</name>
-            <url>http://maven.springframework.org/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
@@ -83,9 +55,9 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.abada</groupId>
-            <artifactId>abada-common-spring-mvc</artifactId>
-            <version>1.2.2</version>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-common-spring-mvc</artifactId>
+            <version>2.0.0</version>
         </dependency>  
         <dependency>
             <groupId>org.freemarker</groupId>
@@ -94,9 +66,9 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.abada</groupId>
-            <artifactId>abada-dwm</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-dwm</artifactId>
+            <version>2.0-SNAPSHOT</version>
             <scope>runtime</scope>                
         </dependency>
         <dependency>
@@ -146,14 +118,14 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.abada</groupId>
-            <artifactId>abada-extjs</artifactId>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-extjs</artifactId>
             <version>4.2.1</version>
             <scope>runtime</scope>
         </dependency>  
         <dependency>
-            <groupId>com.abada</groupId>
-            <artifactId>abada-touch</artifactId>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-touch</artifactId>
             <version>2.3.0</version>
             <scope>runtime</scope>
         </dependency>

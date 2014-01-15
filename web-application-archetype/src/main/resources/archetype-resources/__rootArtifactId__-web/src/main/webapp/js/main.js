@@ -2,7 +2,7 @@
  * #%L
  * Web Archetype
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -28,21 +28,21 @@ Ext.require([
     'Ext.container.Container',
     'Ext.layout.container.Border',
     'Ext.ux.layout.Center',
-    'Abada.menu.HorizontalMainMenu'
+    'Katsu.menu.HorizontalMainMenu'
 ]);
 
 Ext.onReady(function() {
-    Abada.i18n.Bundle.bundle.on('loaded', function() {
+    Katsu.i18n.Bundle.bundle.on('loaded', function() {
         principal();
     });
-    Abada.i18n.Bundle.bundle.on('error', function() {
-        Abada.i18n.Bundle.bundle.language = Abada.i18n.Bundle.bundle.defaultLanguage;
-        Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.on('error', function() {
+        Katsu.i18n.Bundle.bundle.language = Katsu.i18n.Bundle.bundle.defaultLanguage;
+        Katsu.i18n.Bundle.bundle.load();
     });
-    Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.load();
 
     function principal() {
-        var menu = Ext.create('Abada.menu.HorizontalMainMenu', {
+        var menu = Ext.create('Katsu.menu.HorizontalMainMenu', {
             url: getRelativeURI('mainmenu.do'),
             autoLoadData: true
         });
@@ -59,7 +59,7 @@ Ext.onReady(function() {
                         border: '0px'
                     },
                     items: [{
-                            html: '<div style=\"float:left;padding:10px;\"><img alt=\" \" src=\"' + getRelativeURI('/images/logos/abada.png') + '\" style=\"height:60px;\" /></div>'
+                            html: '<div style=\"float:left;padding:10px;\"><img alt=\" \" src=\"' + getRelativeURI('/images/logos/katsu.png') + '\" style=\"height:60px;\" /></div>'
                                     //+'<div style=\"clear: both\" />'
                                     ,
                             border: false,
@@ -73,7 +73,7 @@ Ext.onReady(function() {
         });
 
         var view = Ext.create('Ext.container.Viewport', {
-            cls: ['body-abada'],
+            cls: ['body-katsu'],
             autoScroll: true,
             layout: {
                 type: 'border'

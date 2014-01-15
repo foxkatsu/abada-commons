@@ -11,7 +11,7 @@ package ${package}.rest.identity;
  * #%L
  * Web Archetype
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -29,8 +29,8 @@ package ${package}.rest.identity;
  * #L%
  */
 
-import com.abada.springframework.security.authentication.dni.DniAuthenticationDao;
-import com.abada.springframework.web.servlet.view.JsonView;
+import com.katsu.springframework.security.authentication.dni.DniAuthenticationDao;
+import com.katsu.springframework.web.servlet.view.JsonView;
 import ${package}.entity.view.Views;
 import java.security.Principal;
 import javax.annotation.Resource;

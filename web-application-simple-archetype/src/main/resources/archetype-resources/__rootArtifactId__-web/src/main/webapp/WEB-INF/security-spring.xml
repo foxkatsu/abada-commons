@@ -6,7 +6,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -44,14 +44,14 @@
         <security:custom-filter position="PRE_AUTH_FILTER" ref="x509filter"/>        
     </security:http>
 
-    <bean id="x509filter" class="com.abada.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter">
+    <bean id="x509filter" class="com.katsu.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter">
         <property name="filterSubject" value="serialNumber=(.*?),"/>
         <property name="authenticationManager" ref="authenticationManager"/>
     </bean>
 
-    <bean id="dniAuthenticationProvider" class="com.abada.springframework.security.authentication.dni.DniAuthenticationProvider">
+    <bean id="dniAuthenticationProvider" class="com.katsu.springframework.security.authentication.dni.DniAuthenticationProvider">
         <property name="dniAuthenticationDao">
-            <bean class="com.abada.springframework.security.authentication.dni.HashDniAuthenticationDao">
+            <bean class="com.katsu.springframework.security.authentication.dni.HashDniAuthenticationDao">
                 <property name="users">
                     <map>
                         <entry key="123456789Z">
@@ -104,7 +104,7 @@
         <property name="userDetailsContextMapper" ref="ldapUserDetailsContextMapper"/>  
     </bean>
     
-    <bean class="com.abada.jbpmserver.security.ldap.userdetails.LdapUserDetailsMapper" id="ldapUserDetailsContextMapper">
+    <bean class="com.katsu.jbpmserver.security.ldap.userdetails.LdapUserDetailsMapper" id="ldapUserDetailsContextMapper">
         <property name="groupSearchBase" value="ou=Groups"/>
         <property name="contextSource" ref="contextSource"/>
     </bean-->
@@ -117,7 +117,7 @@
     
     <bean id="md5PasswordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
     
-    <bean id="userDao" class="com.abada.jbpmserver.persistence.dao.impl.UserDaoImpl" >
+    <bean id="userDao" class="com.katsu.jbpmserver.persistence.dao.impl.UserDaoImpl" >
         <property name="entityManagerFactory" ref="entityManagerOggiLogin" />
     </bean>        
     

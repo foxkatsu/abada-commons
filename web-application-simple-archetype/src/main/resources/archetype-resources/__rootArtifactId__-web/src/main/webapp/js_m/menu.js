@@ -2,7 +2,7 @@
  * #%L
  * Cleia
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -24,26 +24,26 @@
  * and open the template in the editor.
  */
 
-Ext.require(['Abada.menu.MainMenu']);
+Ext.require(['Katsu.menu.MainMenu']);
 
 Ext.setup({
     viewport: {
         fullscreen: true
     },
     onReady: function() {
-        Abada.i18n.Bundle.bundle.on('loaded', function() {
+        Katsu.i18n.Bundle.bundle.on('loaded', function() {
             principal();
         });
-        Abada.i18n.Bundle.bundle.on('error', function() {
-            Abada.i18n.Bundle.bundle.language=Abada.i18n.Bundle.bundle.defaultLanguage;
-            Abada.i18n.Bundle.bundle.load();
+        Katsu.i18n.Bundle.bundle.on('error', function() {
+            Katsu.i18n.Bundle.bundle.language=Katsu.i18n.Bundle.bundle.defaultLanguage;
+            Katsu.i18n.Bundle.bundle.load();
         });
-        Abada.i18n.Bundle.bundle.load();
+        Katsu.i18n.Bundle.bundle.load();
 
         function principal() {
-            var menu = Ext.create('Abada.menu.MainMenu', {
+            var menu = Ext.create('Katsu.menu.MainMenu', {
                 url: getRelativeURI('mainmenu.do'),
-                title: Abada.i18n.Bundle.bundle.getMsg('menu.title')
+                title: Katsu.i18n.Bundle.bundle.getMsg('menu.title')
             });
 
             Ext.Viewport.add(menu);

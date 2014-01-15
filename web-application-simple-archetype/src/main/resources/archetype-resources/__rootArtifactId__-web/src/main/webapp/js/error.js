@@ -2,7 +2,7 @@
  * #%L
  * Cleia
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -32,20 +32,20 @@ Ext.onReady(function() {
 
     function principal() {
         Ext.MessageBox.show({
-            title: Abada.i18n.Bundle.bundle.getMsg('error.title'),
-            msg: Abada.i18n.Bundle.bundle.getMsg('error.msg'),
+            title: Katsu.i18n.Bundle.bundle.getMsg('error.title'),
+            msg: Katsu.i18n.Bundle.bundle.getMsg('error.msg'),
             //  buttons: Ext.Msg.YESNOCANCEL,
             icon: Ext.MessageBox.ERROR,
             closable: false
         });
     }
 
-    Abada.i18n.Bundle.bundle.on('loaded', function() {
+    Katsu.i18n.Bundle.bundle.on('loaded', function() {
         principal();
     });
-    Abada.i18n.Bundle.bundle.on('error', function() {
-        Abada.i18n.Bundle.bundle.language = Abada.i18n.Bundle.bundle.defaultLanguage;
-        Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.on('error', function() {
+        Katsu.i18n.Bundle.bundle.language = Katsu.i18n.Bundle.bundle.defaultLanguage;
+        Katsu.i18n.Bundle.bundle.load();
     });
-    Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.load();
 });

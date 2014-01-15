@@ -11,7 +11,7 @@ package ${package};
  * #%L
  * Web Archetype Module for DWM
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@ package ${package};
  * #L%
  */
 
-import com.abada.springframework.web.servlet.menu.MenuEntry;
+import com.katsu.springframework.web.servlet.menu.MenuEntry;
 import java.util.Arrays;
 import javax.annotation.security.RolesAllowed;
 import org.springframework.stereotype.Controller;

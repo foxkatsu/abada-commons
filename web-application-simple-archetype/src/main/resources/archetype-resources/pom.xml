@@ -3,7 +3,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -41,7 +41,7 @@
                     <![CDATA[
                         <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="ds1">
                             <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-                            <property name="url" value="jdbc:mysql://imasd.abadasoft.com:3306/${artifactId}" />
+                            <property name="url" value="jdbc:mysql://localhost:3306/${artifactId}" />
                             <property name="username" value="user" />
                             <property name="password" value="password" />
                             <property name="testOnBorrow" value="true" />
@@ -53,7 +53,7 @@
             </properties>
         </profile>
         <profile>
-            <id>cloud Abada</id>    
+            <id>cloud foundry</id>    
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>                 

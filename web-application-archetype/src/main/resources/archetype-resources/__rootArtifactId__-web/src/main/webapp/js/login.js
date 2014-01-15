@@ -2,7 +2,7 @@
  * #%L
  * Cleia
  * %%
- * Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+ * Copyright (C) 2013 Katsu
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -30,24 +30,24 @@ Ext.require([
     'Ext.button.Button',
     'Ext.window.Window',
     'Ext.util.KeyNav',
-    'Abada.Ajax',
-    'Abada.Base64'
+    'Katsu.Ajax',
+    'Katsu.Base64'
 ]);
 
 Ext.onReady(function() {
-    Abada.i18n.Bundle.bundle.on('loaded', function() {
+    Katsu.i18n.Bundle.bundle.on('loaded', function() {
         principal();
     });
-    Abada.i18n.Bundle.bundle.on('error', function() {
-        Abada.i18n.Bundle.bundle.language = Abada.i18n.Bundle.bundle.defaultLanguage;
-        Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.on('error', function() {
+        Katsu.i18n.Bundle.bundle.language = Katsu.i18n.Bundle.bundle.defaultLanguage;
+        Katsu.i18n.Bundle.bundle.load();
     });
-    Abada.i18n.Bundle.bundle.load();
+    Katsu.i18n.Bundle.bundle.load();
 
     function principal() {
         function formSubmit() {
             authHeader = getBasicAuthentication();
-            Abada.Ajax.request({
+            Katsu.Ajax.request({
                 url: App.urlServer + App.urlServerRoles,
                 headers: {
                     Authorization: authHeader
@@ -63,15 +63,15 @@ Ext.onReady(function() {
         }
 
         function getBasicAuthentication() {
-            return 'Basic ' + Abada.Base64.encode(login.getForm().findField('j_username').getValue() + ':' + login.getForm().findField('j_password').getValue());
+            return 'Basic ' + Katsu.Base64.encode(login.getForm().findField('j_username').getValue() + ':' + login.getForm().findField('j_password').getValue());
         }
 
         function formSubmitPriv() {
             if (login.getForm().isValid()) {
                 login.getForm().submit({
                     method: 'POST',
-                    waitTitle: Abada.i18n.Bundle.bundle.getMsg('login.connecting'),
-                    waitMsg: Abada.i18n.Bundle.bundle.getMsg('login.connectionMessage'),
+                    waitTitle: Katsu.i18n.Bundle.bundle.getMsg('login.connecting'),
+                    waitMsg: Katsu.i18n.Bundle.bundle.getMsg('login.connectionMessage'),
                     failure: function(form, action) {
                     },
                     success: function() {
@@ -96,12 +96,12 @@ Ext.onReady(function() {
             },
             items: [
                 {
-                    fieldLabel: Abada.i18n.Bundle.bundle.getMsg('login.username'),
+                    fieldLabel: Katsu.i18n.Bundle.bundle.getMsg('login.username'),
                     name: 'j_username',
                     id: 'j_username',
                     allowBlank: false
                 }, {
-                    fieldLabel: Abada.i18n.Bundle.bundle.getMsg('login.password'),
+                    fieldLabel: Katsu.i18n.Bundle.bundle.getMsg('login.password'),
                     name: 'j_password',
                     id: 'j_password',
                     allowBlank: false,
@@ -118,25 +118,25 @@ Ext.onReady(function() {
                             '</a>'
                 }, '->'
                         , {
-                    text: Abada.i18n.Bundle.bundle.getMsg('login.button'),
+                    text: Katsu.i18n.Bundle.bundle.getMsg('login.button'),
                     id: 'blogin',
                     formBind: true,
                     handler: formSubmit,
-                    tooltip: Abada.i18n.Bundle.bundle.getMsg('login.tooltip')
+                    tooltip: Katsu.i18n.Bundle.bundle.getMsg('login.tooltip')
                 }]
         });
 
         var win = Ext.create('Ext.window.Window', {
             id: 'wlogin',
             closable: false,
-            title: Abada.i18n.Bundle.bundle.getMsg('login.title'),
+            title: Katsu.i18n.Bundle.bundle.getMsg('login.title'),
             items: [login]
         });
 
         var view = Ext.create('Ext.container.Viewport', {
             //layout: 'ux.center',               
             autoScroll: true,
-            cls: ['body-abada'],
+            cls: ['body-katsu'],
             items: [
             ]
         });

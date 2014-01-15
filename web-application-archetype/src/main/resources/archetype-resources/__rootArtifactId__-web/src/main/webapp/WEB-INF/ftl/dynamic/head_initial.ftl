@@ -4,18 +4,18 @@
 <!--CSS Ext4 -->
 <#if (!isDesktop?? || isDesktop) >
 <link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/ext4/resources/ext-theme-neptune/ext-theme-neptune-all.css"/>" />
-<link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/abada/css/abada.css"/>" />
+<link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/katsu/css/katsu.css"/>" />
 <link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/css/backend.css"/>" />
 <!--Ext4 base -->
 <script src="<@spring.url relativeUrl="/ext4/bootstrap.js"/>" type="text/javascript"></script>
 <!--script src="<@spring.url relativeUrl="/ext4/builds/ext-core-debug.js" />" type="text/javascript"></script-->
-<script src="<@spring.url relativeUrl="/abada/ext-abada-utils.js"/>" type="text/javascript"></script>
+<script src="<@spring.url relativeUrl="/katsu/ext-katsu-utils.js"/>" type="text/javascript"></script>
 <#else>
 <!--CSS Touch -->
 <link rel="stylesheet" type="text/css" href="<@spring.url relativeUrl="/touch/resources/css/sencha-touch.css"/>" />
 <!--Tocuch base -->
 <script src="<@spring.url relativeUrl="/touch/sencha-touch.js"/>" type="text/javascript"></script>
-<script src="<@spring.url relativeUrl="/abada-touch/ext-abada-utils.js"/>" type="text/javascript"></script>
+<script src="<@spring.url relativeUrl="/katsu-touch/ext-katsu-utils.js"/>" type="text/javascript"></script>
 </#if>
 
 <script type="text/javascript">
@@ -26,27 +26,27 @@
 <#if (!isDesktop?? || isDesktop) >
             'Ext': '<@spring.url relativeUrl="/ext4/src" />',
             'App': '<@spring.url relativeUrl="/" />',
-            'Abada': '<@spring.url relativeUrl="/abada" />'
+            'Katsu': '<@spring.url relativeUrl="/katsu" />'
 <#else>
             'Ext': '<@spring.url relativeUrl="/touch/src" />',
             'App': '<@spring.url relativeUrl="/" />',
-            'Abada': '<@spring.url relativeUrl="/abada-touch" />'
+            'Katsu': '<@spring.url relativeUrl="/katsu-touch" />'
 </#if>
         }
     });
 
     Ext.require([
-        'Ext.Ajax','Abada.Ajax','Abada.i18n.Bundle'
+        'Ext.Ajax','Katsu.Ajax','Katsu.i18n.Bundle'
     ]);
 
     Ext.onReady(function() {
         Ext.Ajax.withCredentials = true;
-        Abada.Ajax.withCredentials = true;
+        Katsu.Ajax.withCredentials = true;
 
         Ext.Ajax.useDefaultXhrHeader = false;
-        Abada.Ajax.useDefaultXhrHeader = false;        
+        Katsu.Ajax.useDefaultXhrHeader = false;        
 
-        Abada.i18n.Bundle.bundle=Ext.create('Abada.i18n.Bundle',{
+        Katsu.i18n.Bundle.bundle=Ext.create('Katsu.i18n.Bundle',{
             path: '<@spring.url relativeUrl="/locale" />',
 <#if (!isDesktop?? || isDesktop) >
             localePath: '<@spring.url relativeUrl="/ext4/locale" />',

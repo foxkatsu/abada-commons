@@ -6,7 +6,7 @@
   #%L
   Web Archetype
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -44,14 +44,14 @@
         <security:custom-filter position="PRE_AUTH_FILTER" ref="x509filter"/>        <!-- -->
     </security:http>
     
-    <bean id="x509filter" class="com.abada.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter">
+    <bean id="x509filter" class="com.katsu.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter">
         <property name="filterSubject" value="serialNumber=(.*?),"/>
         <property name="authenticationManager" ref="authenticationManager"/>
     </bean>
     
-    <bean id="dniAuthenticationProvider" class="com.abada.springframework.security.authentication.dni.DniAuthenticationProvider">
+    <bean id="dniAuthenticationProvider" class="com.katsu.springframework.security.authentication.dni.DniAuthenticationProvider">
         <property name="dniAuthenticationDao">
-            <bean class="com.abada.springframework.security.authentication.dni.HttpDniAuthenticationDao">
+            <bean class="com.katsu.springframework.security.authentication.dni.HttpDniAuthenticationDao">
                 <property name="url" ref="serverUrlDniRoles"/>
                 <property name="username" value="dnie_user"/>
                 <property name="password" value="dnie_user_1234"/>                
@@ -64,7 +64,7 @@
         <security:authentication-provider ref="loginProvider" />
     </security:authentication-manager>
 
-    <bean id="loginProvider" class="com.abada.springframework.security.authentication.HtmlAuthenticationProvider" >
+    <bean id="loginProvider" class="com.katsu.springframework.security.authentication.HtmlAuthenticationProvider" >
         <property name="url" ref="serverUrlRoles" />
     </bean>
 

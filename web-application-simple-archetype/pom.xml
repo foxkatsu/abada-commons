@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.abada</groupId>
+    <groupId>com.katsu</groupId>
     <artifactId>web-application-simple-archetype</artifactId>
     <version>1.0.6-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
@@ -44,7 +44,7 @@
                         <phase>process-sources</phase>
                         <configuration>
                             <licenseName>gpl_v3</licenseName>
-                            <organizationName>Abada Servicios Desarrollo (investigacion@abadasoft.com)</organizationName>
+                            <organizationName>Katsu</organizationName>
                             <inceptionYear>2013</inceptionYear>
                             <projectName>Web Archetype</projectName>
                             <excludes>
