@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  Abada ExtJs
+  Katsu ExtJs
   %%
-  Copyright (C) 2013 Abada Servicios Desarrollo (investigacion@abadasoft.com)
+  Copyright (C) 2013 Katsu
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -36,5 +36,5 @@
     <!--
                 Indicamos que clases deben ser leidas por Spring para buscar recursos
         -->
-        <context:component-scan base-package="com.abada.extjs" />
+        <context:component-scan base-package="com.katsu.extjs" />
  </beans>

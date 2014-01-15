@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>katsu-commons</artifactId>
+        <groupId>com.katsu</groupId>
+        <version>2.0.0</version>
+    </parent>
+    <groupId>com.katsu</groupId>
+    <artifactId>katsu-common-extjs</artifactId>
+    <version>2.0.0</version>
+    <name>katsu-common-extjs</name>
+    <packaging>bundle</packaging>
+    <url>http://www.katsusoft.com</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <!--plugin>
+                <groupId>com.pyx4me</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.0.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>proguard</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <proguardVersion>${proguard.version}</proguardVersion>
+                    <obfuscate>true</obfuscate>
+                    <includeDependency>true</includeDependency> 
+                    <injar>${project.artifactId}-${project.version}.jar</injar>
+                    <outjar>${project.artifactId}-${project.version}-obf.jar</outjar> 
+                    <outputDirectory>${project.build.directory}</outputDirectory> 
+                    <options>    
+
+                        <option>-keepdirectories</option>
+                        <option>-dontshrink</option>
+                        <option>-dontoptimize</option>
+                        
+                        <option>-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod</option>
+                        <option>-keep public class * {public protected *;}</option>
+                        <option>-keep @${project.parent.groupId}.ofuscation.annotation.NoOfuscation class * {public protected private *;public &lt;methods&gt;;}</option>
+                        <option>-keepclassmembernames class * {java.lang.Class class$(java.lang.String);java.lang.Class class$(java.lang.String, boolean);}</option>
+                        <option>-keepclasseswithmembernames class * {native &lt;methods&gt;;}</option>
+                        <option>-keepclassmembers enum * {public static **[] values();public static ** valueOf(java.lang.String);}</option>
+                        <option>-keepclassmembers class * implements java.io.Serializable {static final long serialVersionUID;private static final java.io.ObjectStreamField[] serialPersistentFields;private void writeObject(java.io.ObjectOutputStream);private void readObject(java.io.ObjectInputStream);java.lang.Object writeReplace();java.lang.Object readResolve();}</option>
+                    </options>
+                    <libs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                    </libs>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.proguard</groupId>
+                        <artifactId>proguard</artifactId>
+                        <version>${proguard.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+            </plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-Version>${project.version}</Bundle-Version>          
+                        <katsu-common-extjs-Config-Path>/META-INF/katsu-common-extjs.xml</katsu-common-extjs-Config-Path>
+                        <Export-Package>
+                            com.katsu.extjs,
+                            com.katsu.extjs.grid.mapping
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.katsu</groupId>
+            <artifactId>katsu-common</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <!--dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>            
+        </dependency-->
+    </dependencies>
+</project>

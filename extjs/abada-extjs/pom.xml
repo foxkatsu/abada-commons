@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.abada</groupId>
-    <artifactId>abada-extjs</artifactId>
+    <groupId>com.katsu</groupId>
+    <artifactId>katsu-extjs</artifactId>
     <version>4.2.1</version>
     <packaging>jar</packaging>
 
-    <name>abada-extjs</name>
+    <name>katsu-extjs</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -39,9 +39,9 @@
                         <phase>process-sources</phase>
                         <configuration>
                             <licenseName>gpl_v3</licenseName>
-                            <organizationName>Abada Servicios Desarrollo (investigacion@abadasoft.com)</organizationName>
+                            <organizationName>Katsu</organizationName>
                             <inceptionYear>2013</inceptionYear>
-                            <projectName>Abada ExtJs</projectName>
+                            <projectName>Katsu ExtJs</projectName>
                             <excludes>
                                 <exclude>**/README</exclude>
                                 <exclude>**/*.ftl</exclude>
