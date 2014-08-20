@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.katsu</groupId>
     <artifactId>katsu-common-spring-orm</artifactId>
-    <version>2.0.0</version>
+    <version>${project.version}</version>
     <name>katsu-common-spring-orm</name>
      <packaging>bundle</packaging>
     <url>http://www.katsusoft.com</url>
@@ -118,7 +118,7 @@
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
-            <version>1.0.2</version>
+            <version>${persistence-api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -138,18 +138,18 @@
         <dependency>
             <groupId>com.katsu</groupId>
             <artifactId>katsu-common-json</artifactId>
-            <version>2.0.0</version>
+            <version>${project.version}</version>
         </dependency>                
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
-            <version>2.5.1</version>      
+            <version>${eclipselink.version}</version>      
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>3.18.1-GA</version>
+            <version>${javassist.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -159,7 +159,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.2.7.Final</version>
+            <version>${hibernate-entitymanager.version}</version>
         </dependency>
     </dependencies>
     <repositories>
