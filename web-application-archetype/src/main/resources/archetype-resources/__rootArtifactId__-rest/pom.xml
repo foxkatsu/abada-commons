@@ -48,61 +48,49 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.1</version>
+            <version>${javax.servlet.jsp-api}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.katsu</groupId>
             <artifactId>katsu-common-spring-mvc</artifactId>
-            <version>2.0.0</version>
+            <version>${katsu.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.20</version>
+            <version>${freemarker.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.2.2</version>
+            <version>${commons-fileupload.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j.version}</version>
             <scope>runtime</scope>
         </dependency>        
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.27</version>
+            <version>${mysql-connector.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>${rootArtifactId}-api</artifactId>
             <version>${version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-            <scope>test</scope>
-        </dependency>
+        </dependency>                
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-dao</artifactId>
@@ -112,18 +100,18 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>  
+            <version>${commons-dbcp.version}</version>  
             <scope>runtime</scope>          
         </dependency>
         <dependency>
             <groupId>org.cloudfoundry</groupId>
             <artifactId>cloudfoundry-runtime</artifactId>
-            <version>0.8.4</version>
+            <version>${cloudfoundry-runtime.version}</version>
         </dependency> 
         <dependency>
             <groupId>com.thetransactioncompany</groupId>
             <artifactId>cors-filter</artifactId>
-            <version>1.8</version>
+            <version>${cors-filter.version}</version>
             <scope>runtime</scope>
         </dependency> 
     </dependencies>
