@@ -5,7 +5,7 @@
     <artifactId>web-application-archetypes</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <properties>        
+<!--    <properties>        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <katsu.commons.version>2.0.1</katsu.commons.version>
         <javax.servlet.jsp-api>2.3.1</javax.servlet.jsp-api>
@@ -34,7 +34,7 @@
         <extjs.version>4.2.1</extjs.version>
         <katsu-touch.version>2.3.0</katsu-touch.version>
         <spring-mobile-device.version>1.1.0.RELEASE</spring-mobile-device.version>
-    </properties>
+    </properties>-->
     <modules>
         <module>web-application-archetype</module>
         <module>web-application-simple-archetype</module>
