@@ -33,7 +33,7 @@
         <javax.servlet.jsp-api>2.3.1</javax.servlet.jsp-api>
         <freemarker.version>2.3.20</freemarker.version>
         <katsu-dwm.version>2.0-SNAPSHOT</katsu-dwm.version>
-        <spring.version>4.0.6.RELEASE</spring.version>
+        <spring.version>4.1.4.RELEASE</spring.version>
         <jsr250-api.version>1.0</jsr250-api.version>
         <cglib.version>2.2.2</cglib.version>
         <spring.security.version>3.2.5.RELEASE</spring.security.version>
